@@ -1,36 +1,26 @@
 <template>
     <Page>
-        <ActionBar>
-            <GridLayout width="100%" columns="auto, *">
-                <Label text="MENU" @tap="$refs.drawer.nativeView.showDrawer()" col="0"/>
-                <Label class="title" text="Welcome to NativeScript-Vue!"  col="1"/>
-            </GridLayout>
-        </ActionBar>
+        <ActionBar title="To Does"></ActionBar>
 
-        <RadSideDrawer ref="drawer">
-            <StackLayout ~drawerContent backgroundColor="#ffffff">
-                <Label class="drawer-header" text="Drawer"/>
-
-                <Label class="drawer-item" text="Item 1"/>
-                <Label class="drawer-item" text="Item 2"/>
-                <Label class="drawer-item" text="Item 3"/>
-            </StackLayout>
-
-            <GridLayout ~mainContent columns="*" rows="*">
-                <Label class="message" :text="msg" col="0" row="0"/>
-            </GridLayout>
-        </RadSideDrawer>
+        <StackLayout>
+                 <Button v-bind:text="msg" @tap="handleBtnPress"/>
+        </StackLayout>
     </Page>
 </template>
 
 <script>
-  export default {
-    data() {
-      return {
-        msg: 'Hello World!'
-      }
+export default {
+  data: function() {
+    return {
+      msg: "Klik mij niet!"
+    };
+  },
+  methods: {
+    handleBtnPress: function() {   
+      alert('Ela niet klikken heb ik gezegd, snotneuze!');
     }
   }
+};
 </script>
 
 <style scoped>
