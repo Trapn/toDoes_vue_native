@@ -4,7 +4,6 @@
 
         <StackLayout>
                  <Button v-bind:text="msg" @tap="handleBtnPress"/>
-                 <Button class="btn btn-primary" @tap="$router.push('/about')">About</Button>
         </StackLayout>
     </Page>
 </template>
@@ -13,12 +12,12 @@
 export default {
   data: function() {
     return {
-      msg: "Klik mij niet!"
+      msg: "About"
     };
   },
   methods: {
     handleBtnPress: function() {   
-      alert('Ela niet klikken heb ik gezegd, snotneuze!');
+      alert('This is the aboutpage');
     }
   }
 };
